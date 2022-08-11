@@ -10,7 +10,7 @@ username = process.env.db_user,
 password = process.env.password;
 
 // mongoose.connect('mongodb://localhost/crazy_xp_db');
-const mongoDBClusterURI = `mongodb+srv://${username}:${password}@cluster0.4iyweli.mongodb.net/crazy_xb_db?retryWrites=true&w=majority`;
+const mongoDBClusterURI = `mongodb+srv://${username}:${password}@cluster0.4iyweli.mongodb.net/crazy_xp_db?retryWrites=true&w=majority`;
 async function connectMongo() {
     try {
         await mongoose.connect(mongoDBClusterURI);
