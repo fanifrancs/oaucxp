@@ -9,16 +9,16 @@ const
 username = process.env.db_user,
 password = process.env.password;
 
-mongoose.connect('mongodb://localhost/crazy_xp_db');
-// const mongoDBClusterURI = `mongodb+srv://${username}:${password}@cluster0.4iyweli.mongodb.net/crazy_xp_db?retryWrites=true&w=majority`;
-// async function connectMongo() {
-//     try {
-//         await mongoose.connect(mongoDBClusterURI);
-//         console.log('Successfully connected to mongoDB');
-//     } catch { 
-//         err => console.log(err, 'Something went wrong');
-//     }
-// }
+// mongoose.connect('mongodb://localhost/crazy_xp_db');
+const mongoDBClusterURI = `mongodb+srv://${username}:${password}@cluster0.4iyweli.mongodb.net/crazy_xp_db?retryWrites=true&w=majority`;
+async function connectMongo() {
+    try {
+        await mongoose.connect(mongoDBClusterURI);
+        console.log('Successfully connected to mongoDB');
+    } catch { 
+        err => console.log(err, 'Something went wrong');
+    }
+}
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
@@ -68,12 +68,12 @@ app.get('/posts/:id', (req, res) => {
     })
 });
 
-app.listen(3500, () => {
-    // connectMongo();
-    console.log('server started on port 3500');
-});
-
-// app.listen(process.env.PORT, process.env.IP, () => {
+// app.listen(3500, () => {
 //     connectMongo();
-//     console.log('server started');
+//     console.log('server started on port 3500');
 // });
+
+app.listen(process.env.PORT, process.env.IP, () => {
+    connectMongo();
+    console.log('server started');
+});
