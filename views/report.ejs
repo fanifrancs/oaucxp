@@ -20,25 +20,16 @@
                     Home
                 </a>
                 <a href="/posts/new" class="item">
-                    Post
-                </a>
-                <a href="/contact" class="active item">
-                    Contact
+                    Add
                 </a>
             </div>
         </div>
 
         <div class="ui message container">
-            <h2 id="info">Here you can send us a message or report a post</h2>
-        </div>
-        <div class="ui red message container">
-            We do not support posts that goes against anonimity. If you do find
-            a post exposing your identity or another person's. Kindly fill in the 
-            form below and make sure you specify the id of the particular post. 
-            The id is the long string being displayed beside or below the date of 
-            each post. Just copy it and paste it into the post id input field. 
-            Once we receive your report, we will check to see if the particular 
-            post goes against our policy. It will be removed if it does. Thanks : )
+            <div id="warning" class="ui red message container">
+                You are about to report this post
+            </div>
+            <p id="post"><%= post.body %></p>
         </div>
 
         <form method="post" action="https://formspree.io/f/mbjqeopd">
@@ -46,29 +37,23 @@
                 <input id="app-name" name="app-name" value="crazy-xp" type="text">
                 <div class="field">
                     <div class="ui input">
-                        <input name="email" type="email" placeholder="email (optional)">
+                        <input name="email" type="email" placeholder="Email (optional)">
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui input">
-                        <input name="post id" type="text" placeholder="post id (if reporting a post)">
+                        <input name="post id" type="text" value="<%= post._id %>" placeholder="post id" readonly>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui input">
-                        <input name="subject" type="text" placeholder="subject (required)" required>
+                        <textarea name="message" placeholder="Message (optional)"></textarea>
                     </div>
                 </div>
-                <div class="field">
-                    <div class="ui input">
-                        <textarea name="message" placeholder="Message (required)" required></textarea>
-                    </div>
-                </div>
-                <input class="ui inverted red button" name="submit" type="submit" value="Submit">
+                <button class="ui red button" name="submit" type="submit" >Report</button>
             </div>
         </form>
 
-        <h2 id="footer">Made with ❤</h2>
         <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     </body>
 </html>

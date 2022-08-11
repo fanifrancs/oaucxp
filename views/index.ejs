@@ -20,45 +20,29 @@
                     Home
                 </a>
                 <a href="/posts/new" class="item">
-                    Post
-                </a>
-                <a href="/contact" class="item">
-                    Contact
+                    Add
                 </a>
             </div>
         </div>
 
         <div class="ui message container">
-            <h2 id="info">Anonymously share your crazy experiences on OAU campus</h2>
-            <div class="ui inverted animated red button" tabindex="0">
-                <div class="visible content">Get Started</div>
-                <a id="link" href="/posts/new" class="hidden content">
-                    <i class="right arrow icon"></i>
-                </a>
-            </div>
-            <a href="#footer">
-                <button class="ui black button">latest posts</button>
+            <h3 id="info">Anonymously share your crazy experiences on OAU campus</h3>
+            <a href="/posts/new" class="item">
+                <button class="ui tiny primary button">Get Started</button>
             </a>
         </div>
 
         <div class="posts">
-            <% posts.forEach((post) => { %>
+            <% posts.slice().reverse().forEach((post) => { %>
                 <div class="ui message container">
-                    <a id="label" class="ui red tag label"><%= post.created.toDateString() %></a>
-                    <a id="label" class="ui grey label"><%= post._id %></a>
+                    <a id="label" class="ui grey label"><%= post.created.toLocaleString() %></a>
                     <p id="post"><%= post.body %></p>
+                    <a id="link" href="/posts/<%= post._id %>">
+                        <button class="ui tiny red button">Report</button>
+                    </a>
                 </div>
             <% }) %>
         </div>
-
-        <br>
-        <a href="#heading">
-            <button class="ui container icon button black">
-                <i class="icon arrow up"></i>
-            </button>
-        </a>
-
-        <h2 id="footer">Made with ❤</h2>
 
         <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     </body>

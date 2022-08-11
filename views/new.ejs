@@ -20,17 +20,13 @@
                     Home
                 </a>
                 <a href="/posts/new" class=" active item">
-                    Post
-                </a>
-                <a href="/contact" class="item">
-                    Contact
+                    Add
                 </a>
             </div>
         </div>
 
-        <div class="ui red message container">
-            We do not support posts that goes against anonimity. Please
-            note that this app is still under development. Thanks : )
+        <div id="warning" class="ui red message container">
+            We do not support posts that goes against anonimity
         </div>
 
         <form action="/posts" method="post">
@@ -38,11 +34,10 @@
                 <div class="field">
                   <textarea name='post[body]' placeholder="Describe your experience" required></textarea>
                 </div>
-                <input class="ui inverted red button" type="submit" value="Submit">
+                <button class="ui primary button" type="submit">Submit</button>
             </div>
         </form>
-
-        <h2 id="footer">Made with ❤</h2>
+        
         <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     </body>
 </html>

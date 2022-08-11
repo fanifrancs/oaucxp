@@ -1,28 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellota:wght@700&family=Pacifico&display=swap');
 
 #info{
-    font-family: 'Ubuntu', sans-serif;
-    color: gray;
+    font-family: 'Bellota', cursive;
 }
 
 #label{
-    margin-bottom: 7px;
-    font-weight: normal;
     cursor: default;
+    font-family: 'Bellota', cursive;
+}
+
+button{
+    font-family: 'Space Grotesk', sans-serif !important;
+}
+
+a.item{
+    font-family: 'Space Grotesk', sans-serif !important;
 }
 
 #post{
     font-size: large;
+    font-family: 'Bellota', cursive;
 }
 
-#link{
-    color: white;
-}
-
-#footer{
-    text-align: center;
-    font-family: 'Pacifico', cursive;
-    color: gray;
+#warning{
+    font-family: 'Bellota', cursive;
 }
 
 #logo{
