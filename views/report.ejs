@@ -25,11 +25,8 @@
             </div>
         </div>
 
-        <div class="ui message container">
-            <div id="warning" class="ui red message container">
-                You are about to report this post
-            </div>
-            <p id="post"><%= post.body %></p>
+        <div id="warning" class="ui red message container">
+            You are about to report this post
         </div>
 
         <form method="post" action="https://formspree.io/f/mbjqeopd">
@@ -37,12 +34,17 @@
                 <input id="app-name" name="app-name" value="crazy-xp" type="text">
                 <div class="field">
                     <div class="ui input">
-                        <input name="email" type="email" placeholder="Email (optional)">
+                        <textarea name="message" placeholder="post" readonly><%= post.body %></textarea>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui input">
                         <input name="post id" type="text" value="<%= post._id %>" placeholder="post id" readonly>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui input">
+                        <input name="email" type="email" placeholder="Email (optional)">
                     </div>
                 </div>
                 <div class="field">
