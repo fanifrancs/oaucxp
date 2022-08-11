@@ -63,9 +63,11 @@ app.get('/contact', (req, res) => {
 });
 
 // app.listen(3500, () => {
+//     connectMongo();
 //     console.log('server started on port 3500');
 // });
 
-app.listen(process.env.PORT, process.env.IP, function() {
+app.listen(process.env.PORT, process.env.IP, () => {
+    connectMongo();
     console.log('server started');
 });
