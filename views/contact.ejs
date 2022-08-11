@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Anonymously share your crazy experiences on OAU campus">
+        <title>OAU crazy experiences</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    </head>
+    <body>
+        <div class="ui inverted segment">
+            <div class="ui inverted secondary menu">
+                <a href="/" id="heading" class="item">
+                    <img id="logo" src="/oau.jpg" alt="logo">
+                </a>
+                <a href="/" class="item">
+                    Home
+                </a>
+                <a href="/posts/new" class="item">
+                    Post
+                </a>
+                <a href="/contact" class="active item">
+                    Contact
+                </a>
+            </div>
+        </div>
+
+        <div class="ui message container">
+            <h2 id="info">Here you can send us a message or report a post</h2>
+        </div>
+        <div class="ui red message container">
+            We do not support posts that goes against anonimity. If you do find
+            a post exposing your identity or another person's. Kindly fill in the 
+            form below and make sure you specify the id of the particular post. 
+            The id is the long string being displayed beside or below the date of 
+            each post. Just copy it and paste it into the post id input field. 
+            Once we receive your report, we will check to see if the particular 
+            post goes against our policy. It will be removed if it does. Thanks : )
+        </div>
+
+        <form method="post" action="https://formspree.io/f/mbjqeopd">
+            <div class="ui form container">
+                <input id="app-name" name="app-name" value="crazy-xp" type="text">
+                <div class="field">
+                    <div class="ui input">
+                        <input name="email" type="email" placeholder="email (optional)">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui input">
+                        <input name="post id" type="text" placeholder="post id (if reporting a post)">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui input">
+                        <input name="subject" type="text" placeholder="subject (required)" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui input">
+                        <textarea name="message" placeholder="Message (required)" required></textarea>
+                    </div>
+                </div>
+                <input class="ui inverted red button" name="submit" type="submit" value="Submit">
+            </div>
+        </form>
+
+        <h2 id="footer">Made with ❤</h2>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    </body>
+</html>

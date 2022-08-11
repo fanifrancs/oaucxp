@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+#info{
+    font-family: 'Ubuntu', sans-serif;
+    color: gray;
+}
+
+#label{
+    margin-bottom: 7px;
+    font-weight: normal;
+    cursor: default;
+}
+
+#post{
+    font-size: large;
+}
+
+#link{
+    color: white;
+}
+
+#footer{
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    color: gray;
+}
+
+#logo{
+    width: 50px;
+}
+
+#app-name{
+    display: none;
+}
