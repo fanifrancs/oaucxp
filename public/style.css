@@ -24,10 +24,6 @@ a.item{
     color: gray;
 }
 
-#report-post{
-    display: none;
-}
-
 #warning{
     font-family: 'Bellota', cursive;
 }
@@ -36,6 +32,6 @@ a.item{
     width: 50px;
 }
 
-#app-name{
+#report-post, #app-name{
     display: none;
 }
