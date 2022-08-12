@@ -38,17 +38,12 @@
                 <input id="app-name" name="app-name" value="crazy-xp" type="text">
                 <div id="report-post" class="field">
                     <div class="ui input">
-                        <textarea name="message" placeholder="post" readonly><%= post.body %></textarea>
+                        <textarea name="post" placeholder="post" readonly><%= post.body %></textarea>
                     </div>
                 </div>
                 <div class="field">
                     <div class="ui input">
                         <input name="post id" type="text" value="<%= post._id %>" placeholder="post id" readonly>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="ui input">
-                        <input name="email" type="email" placeholder="Email (optional)">
                     </div>
                 </div>
                 <div class="field">
