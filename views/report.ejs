@@ -29,10 +29,14 @@
             You are about to report this post
         </div>
 
+        <div class="ui message container">
+            <%= post.body %>
+        </div>
+
         <form method="post" action="https://formspree.io/f/mbjqeopd">
             <div class="ui form container">
                 <input id="app-name" name="app-name" value="crazy-xp" type="text">
-                <div class="field">
+                <div id="report-post" class="field">
                     <div class="ui input">
                         <textarea name="message" placeholder="post" readonly><%= post.body %></textarea>
                     </div>

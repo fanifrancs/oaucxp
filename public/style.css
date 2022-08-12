@@ -24,6 +24,10 @@ a.item{
     color: gray;
 }
 
+#report-post{
+    display: none;
+}
+
 #warning{
     font-family: 'Bellota', cursive;
 }
