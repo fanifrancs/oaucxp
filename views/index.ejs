@@ -36,7 +36,7 @@
             <% posts.slice().reverse().forEach((post) => { %>
                 <div class="ui message container">
                     <a id="label" class="ui grey label"><%= post.created.toLocaleString() %></a>
-                    <p id="post"><%= post.body %></p>
+                    <p><%= post.body %></p>
                     <a id="link" href="/posts/<%= post._id %>">
                         <button class="ui tiny red button">Report</button>
                     </a>

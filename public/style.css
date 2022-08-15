@@ -8,7 +8,6 @@
 #label{
     cursor: default;
     font-family: 'Bellota', cursive;
-    color: gray;
 }
 
 button{
@@ -17,10 +16,6 @@ button{
 
 a.item{
     font-family: 'Space Grotesk', sans-serif !important;
-}
-
-#post{
-    /* color: gray; */
 }
 
 #warning{
