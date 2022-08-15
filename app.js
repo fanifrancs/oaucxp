@@ -1,24 +1,22 @@
-const express     = require('express'),
-bodyParser        = require('body-parser'),
-mongoose          = require('mongoose'),
-dotenv            = require('dotenv'),
-app = express();
-dotenv.config();
+const express = require('express'),
+bodyParser    = require('body-parser'),
+mongoose      = require('mongoose'),
+app           = express();
 
-const 
-username = process.env.db_user,
-password = process.env.password;
+require('dotenv').config();
 
-// mongoose.connect('mongodb://localhost/crazy_xp_db');
-const mongoDBClusterURI = `mongodb+srv://${username}:${password}@cluster0.4iyweli.mongodb.net/crazy_xp_db?retryWrites=true&w=majority`;
-async function connectMongo() {
+function connectDB() {
     try {
-        await mongoose.connect(mongoDBClusterURI);
-        console.log('Successfully connected to mongoDB');
+        // process.env.db_URI = mongodb_URI
+        mongoose.connect(process.env.db_URI);
+        console.log('connected to DB');
     } catch { 
-        err => console.log(err, 'Something went wrong');
+        err => console.log(err, 'DB connection went wrong');
     }
 }
+
+// mongoose.connect('mongodb://localhost/crazy_xp_db');
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
@@ -68,12 +66,7 @@ app.get('/posts/:id', (req, res) => {
     })
 });
 
-// app.listen(3500, () => {
-//     connectMongo();
-//     console.log('server started on port 3500');
-// });
-
-app.listen(process.env.PORT, process.env.IP, () => {
-    connectMongo();
-    console.log('server started');
+app.listen(process.env.PORT || 3500, process.env.IP, () => {
+    connectDB();
+    console.log('server started || 3500');
 });
